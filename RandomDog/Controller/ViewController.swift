@@ -20,16 +20,28 @@ class ViewController: UIViewController {
         
         let task = URLSession.shared.dataTask(with: randomImageEndpoint) { (data, response, error) in
             guard let data = data else { return }
+            guard let imageUrl = URL(string: self.parseJson(data: data)) else { return }
             
-            do {
-                let json = try JSONSerialization.jsonObject(with: data, options: []) as! [String: Any]
-                let url = json[API_IMAGE] as! String
-                print(url)
-            } catch {
-                print(error)
-            }
+            let task = URLSession.shared.dataTask(with: imageUrl, completionHandler: { (data, response, error) in
+                guard let data = data else { return }
+                self.donwloadImage(data: data)
+            })
+            task.resume()
         }
         task.resume()
+    }
+    
+    private func parseJson(data: Data?) -> String  {
+        let decoder = JSONDecoder()
+        let imageData = try! decoder.decode(DogImage.self, from: data!)
+        return imageData.message
+    }
+    
+    private func donwloadImage(data: Data?)  {
+        let downloadedImage = UIImage(data: data!)
+        DispatchQueue.main.async {
+            self.imageViewDog.image = downloadedImage
+        }
     }
 
 
