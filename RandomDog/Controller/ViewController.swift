@@ -7,7 +7,6 @@
 
 import UIKit
 
-let API_IMAGE: String = "message"
 
 class ViewController: UIViewController {
     
@@ -16,31 +15,19 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let randomImageEndpoint = DogAPI.EndPoint.randomImageFRomAllDogsCollection.url
-        
-        let task = URLSession.shared.dataTask(with: randomImageEndpoint) { (data, response, error) in
-            guard let data = data else { return }
-            guard let imageUrl = URL(string: self.parseJson(data: data)) else { return }
-            
-            let task = URLSession.shared.dataTask(with: imageUrl, completionHandler: { (data, response, error) in
-                guard let data = data else { return }
-                self.donwloadImage(data: data)
-            })
-            task.resume()
+        DogAPI.requestRandomImage(completionHandler: handleRandomImageResponse(imageData:error:))
+    }
+    
+    func handleRandomImageResponse(imageData: DogImage?, error: Error?) {
+        guard let imageURL = URL(string: imageData!.message) else {
+            return
         }
-        task.resume()
+        DogAPI.requestImageFile(url: imageURL, completionHandler: handleImageFileRespon(image:error:))
     }
     
-    private func parseJson(data: Data?) -> String  {
-        let decoder = JSONDecoder()
-        let imageData = try! decoder.decode(DogImage.self, from: data!)
-        return imageData.message
-    }
-    
-    private func donwloadImage(data: Data?)  {
-        let downloadedImage = UIImage(data: data!)
+    func handleImageFileRespon(image: UIImage?, error: Error?) {
         DispatchQueue.main.async {
-            self.imageViewDog.image = downloadedImage
+            self.imageViewDog.image = image
         }
     }
 
