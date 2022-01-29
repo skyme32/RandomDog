@@ -9,13 +9,5 @@ import Foundation
 
 struct Breeds: Codable {
     let status: String
-    let message: String
+    let message: [String:[String]]
 }
-
-enum CodingKeys: String, CodingKey {
-    case name = "food_name"
-    case taste = "taste"
-    case calories = "number of calories"
-}
-
-
