@@ -16,26 +16,44 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="BpT-f8-E5N">
-                                <rect key="frame" x="16" y="44" width="382" height="818"/>
-                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="dWB-Mp-66A">
+                                <rect key="frame" x="16" y="44" width="382" height="819"/>
+                                <subviews>
+                                    <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mrS-2t-jrO">
+                                        <rect key="frame" x="0.0" y="0.0" width="382" height="232"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="232" id="XKW-ed-vSv"/>
+                                        </constraints>
+                                    </pickerView>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="BpT-f8-E5N">
+                                        <rect key="frame" x="0.0" y="232" width="382" height="587"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="587" id="vxw-gv-nXA"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="BpT-f8-E5N" secondAttribute="bottom" id="3IM-Q5-8wF"/>
+                                </constraints>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="BpT-f8-E5N" secondAttribute="trailing" constant="16" id="BqI-hP-Wby"/>
-                            <constraint firstItem="BpT-f8-E5N" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="avL-YF-usI"/>
-                            <constraint firstItem="BpT-f8-E5N" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="nPg-Ko-uRU"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="BpT-f8-E5N" secondAttribute="bottom" id="yDu-4S-sfz"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="dWB-Mp-66A" secondAttribute="trailing" constant="16" id="8LZ-gk-IV3"/>
+                            <constraint firstAttribute="bottom" secondItem="dWB-Mp-66A" secondAttribute="bottom" constant="33" id="ArT-fG-GTM"/>
+                            <constraint firstItem="dWB-Mp-66A" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="FAE-EU-d3Y"/>
+                            <constraint firstItem="dWB-Mp-66A" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="ghb-oa-eh8"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="imageViewDog" destination="BpT-f8-E5N" id="XS3-wR-OQA"/>
+                        <outlet property="pickerViewBreed" destination="mrS-2t-jrO" id="Tb3-UW-pif"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1022" y="-506"/>
+            <point key="canvasLocation" x="-1023.1884057971015" y="-506.25"/>
         </scene>
     </scenes>
     <resources>
