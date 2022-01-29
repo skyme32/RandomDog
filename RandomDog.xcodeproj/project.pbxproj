@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		48A5BF6927A53E10002C078C /* Breeds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48A5BF6827A53E10002C078C /* Breeds.swift */; };
+		48A5BF6C27A55C07002C078C /* RequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48A5BF6B27A55C07002C078C /* RequestManager.swift */; };
 		48A6E3B427A4AA06008D1A56 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48A6E3B327A4AA06008D1A56 /* AppDelegate.swift */; };
 		48A6E3B627A4AA06008D1A56 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48A6E3B527A4AA06008D1A56 /* SceneDelegate.swift */; };
 		48A6E3B827A4AA06008D1A56 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48A6E3B727A4AA06008D1A56 /* ViewController.swift */; };
@@ -20,6 +21,7 @@
 
 /* Begin PBXFileReference section */
 		48A5BF6827A53E10002C078C /* Breeds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Breeds.swift; sourceTree = "<group>"; };
+		48A5BF6B27A55C07002C078C /* RequestManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestManager.swift; sourceTree = "<group>"; };
 		48A6E3B027A4AA06008D1A56 /* RandomDog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RandomDog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		48A6E3B327A4AA06008D1A56 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		48A6E3B527A4AA06008D1A56 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -43,6 +45,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		48A5BF6A27A55BE7002C078C /* RequestManager */ = {
+			isa = PBXGroup;
+			children = (
+				48A5BF6B27A55C07002C078C /* RequestManager.swift */,
+			);
+			path = RequestManager;
+			sourceTree = "<group>";
+		};
 		48A6E3A727A4AA06008D1A56 = {
 			isa = PBXGroup;
 			children = (
@@ -63,6 +73,7 @@
 			isa = PBXGroup;
 			children = (
 				48A6E3C927A4AD3B008D1A56 /* Model */,
+				48A5BF6A27A55BE7002C078C /* RequestManager */,
 				48A6E3C827A4AA56008D1A56 /* Controller */,
 				48A6E3C727A4AA28008D1A56 /* View */,
 				48A6E3C127A4AA08008D1A56 /* Info.plist */,
@@ -175,6 +186,7 @@
 				48A6E3CD27A4B5F5008D1A56 /* DogImage.swift in Sources */,
 				48A6E3B427A4AA06008D1A56 /* AppDelegate.swift in Sources */,
 				48A6E3B627A4AA06008D1A56 /* SceneDelegate.swift in Sources */,
+				48A5BF6C27A55C07002C078C /* RequestManager.swift in Sources */,
 				48A5BF6927A53E10002C078C /* Breeds.swift in Sources */,
 				48A6E3CB27A4AD64008D1A56 /* DogAPI.swift in Sources */,
 			);

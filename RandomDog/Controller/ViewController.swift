@@ -21,7 +21,7 @@ class ViewController: UIViewController {
         pickerViewBreed.dataSource = self
         pickerViewBreed.delegate = self
         
-        DogAPI.requestAllDogsCollection(completionHandler:handleBreedsListResponse(breeds:error:))
+        RequesManager.requestAllDogsCollection(completionHandler:handleBreedsListResponse(breeds:error:))
     }
     
     func handleBreedsListResponse(breeds: [String], error: Error?) {
@@ -35,7 +35,7 @@ class ViewController: UIViewController {
         guard let imageURL = URL(string: imageData!.message) else {
             return
         }
-        DogAPI.requestImageFile(url: imageURL, completionHandler: handleImageFileRespon(image:error:))
+        RequesManager.requestImageFile(url: imageURL, completionHandler: handleImageFileRespon(image:error:))
     }
     
     func handleImageFileRespon(image: UIImage?, error: Error?) {
@@ -60,7 +60,7 @@ extension ViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        DogAPI.requestRandomImage(breed: breeds[row], completionHandler: handleRandomImageResponse(imageData:error:))
+        RequesManager.requestRandomImage(breed: breeds[row], completionHandler: handleRandomImageResponse(imageData:error:))
     }
 
 }
